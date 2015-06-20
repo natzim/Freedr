@@ -15,6 +15,10 @@ Route::group([
     get('profile', 'DashboardController@profile');
     get('profile/edit', 'FreelancerController@edit');
     post('profile/edit', 'FreelancerController@update');
+    get('profile/{id}', 'FreelancerController@show');
+    get('profile/{id}/portfolio', 'FreelancerController@showPortfolio');
+    get('profile/{id}/portfolio/add', 'FreelancerController@add');
+    post('profile/{id}/portfolio/add', 'FreelancerController@addItem');
     get('projects', 'DashboardController@projects');
     get('projects/create', 'ProjectController@create');
     post('projects/create', 'ProjectController@store');

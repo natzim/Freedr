@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Freelancer;
+use App\PortfolioItem;
 use Auth;
 use Request;
 
@@ -38,5 +39,39 @@ class FreelancerController extends Controller
         }
 
         return redirect('/dashboard/profile');
+    }
+
+    public function show($id)
+    {
+        $profile = Freelancer::findOrFail($id);
+
+        return view('dashboard.profile.show', compact('profile'));
+    }
+
+    public function showPortfolio($id)
+    {
+        $profile = Freelancer::findOrFail($id);
+
+        return view('dashboard.profile.portfolio', compact('profile'));
+    }
+
+    public function add($id)
+    {
+        $profile = Freelancer::findOrFail($id); // lol anybody can access this
+
+        return view('dashboard.profile.add', compact('profile'));
+    }
+
+    public function addItem($id)
+    {
+        $profile = Freelancer::findOrFail($id);
+
+        $input = Request::all();
+
+        $input['freelancer_id'] = $profile->id;
+
+        PortfolioItem::create($input);
+
+        return redirect('/dashboard/profile/'.$id.'/portfolio');
     }
 }

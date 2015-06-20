@@ -20,7 +20,7 @@
                     <p>{{ $profile->hourly_rate }} per hour</p>
                 </div>
                 <div class="card-action">
-                    <a href="#">Portfolio</a>
+                    <a href="/dashboard/profile/{{ $profile->id }}/portfolio">Portfolio</a>
                     <a href="#">Reviews</a>
                 </div>
             </div>
