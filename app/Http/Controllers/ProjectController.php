@@ -23,11 +23,11 @@ class ProjectController extends Controller
 
     public function store()
     {
-        $input = Request::all();
+        $project = Project::create(Request::all());
 
-        $input['user_id'] = Auth::id();
+        $project->user()->associate(Auth::user());
 
-        Project::create($input);
+        $project->save();
 
         return redirect()->route('dashboard.projects');
     }

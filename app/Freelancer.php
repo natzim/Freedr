@@ -9,7 +9,6 @@ class Freelancer extends Model
     protected $table = 'freelancers';
 
     protected $fillable = [
-        'user_id', // BAD!!!!
         'title',
         'description',
         'hourly_rate',
@@ -28,5 +27,22 @@ class Freelancer extends Model
     public function portfolioItems()
     {
         return $this->hasMany('App\PortfolioItem');
+    }
+
+    public function accepted()
+    {
+        return $this->hasManyThrough('App\Decision', 'App\Project')
+            ->where('decision', 1);
+    }
+
+    public function rejected()
+    {
+        return $this->hasManyThrough('App\Decision', 'App\Project')
+            ->where('decision', 0);
+    }
+
+    public function matches()
+    {
+        return $this->hasManyThrough('App\Match', 'App\Project');
     }
 }
