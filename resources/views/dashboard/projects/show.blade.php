@@ -7,6 +7,9 @@
         </div>
     </div>
     <div class="container">
+        <a class="btn waves-effect waves-light" href="{{ route('dashboard.projects') }}">
+            <i class="mdi-hardware-keyboard-arrow-left left"></i> Back to projects
+        </a>
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a class="btn-floating btn-large waves-effect waves-light" href="{{ route('dashboard.projects.edit', $project) }}">
                 <i class="mdi-editor-mode-edit"></i>
