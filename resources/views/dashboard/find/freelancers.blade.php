@@ -22,12 +22,20 @@
                 </div>
             </div>
             <div class="center">
-                <a class="btn waves-effect waves-light green" href="#">
-                    <i class="mdi-navigation-check"></i>
-                </a>
-                <a class="btn waves-effect waves-light red" href="#">
-                    <i class="mdi-navigation-close"></i>
-                </a>
+                <form method="post" action="/dashboard/find/freelancers/{{ $profile->id }}/accept">
+                    {!! csrf_field() !!}
+                    <input type="hidden" name="_method" value="put">
+                    <button class="btn waves-effect waves-light green">
+                        <i class="mdi-navigation-check"></i>
+                    </button>
+                </form>
+                <form method="post" action="/dashboard/find/freelancers/{{ $profile->id }}/deny">
+                    {!! csrf_field() !!}
+                    <input type="hidden" name="_method" value="put">
+                    <button class="btn waves-effect waves-light red">
+                        <i class="mdi-navigation-close"></i>
+                    </button>
+                </form>
             </div>
         </div>
     @endif

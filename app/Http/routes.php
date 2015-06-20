@@ -13,7 +13,11 @@ Route::group([
     get('/', 'DashboardController@index');
     get('find', 'DashboardController@find');
     get('find/projects', 'FindController@projects');
+    put('find/projects/{id}/accept', 'FindController@acceptProject');
+    put('find/projects/{id}/deny', 'FindController@denyProject');
     get('find/freelancers', 'FindController@freelancers');
+    put('find/freelancers/{id}/accept', 'FindController@acceptFreelancer');
+    put('find/freelancers/{id}/deny', 'FindController@denyFreelancer');
     get('profile', 'DashboardController@profile');
     get('profile/edit', 'FreelancerController@edit');
     post('profile/edit', 'FreelancerController@update');
