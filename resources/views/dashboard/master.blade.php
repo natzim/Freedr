@@ -5,8 +5,11 @@
         <div class="col s2">
             <ul class="side-nav fixed">
                 <li class="logo">
-                    <a class="brand-logo" href="/">LOGO HERE</a>
+                    <a class="brand-logo" href="/">
+                        <img src="/img/logo.png" alt="freedr">
+                    </a>
                 </li>
+                <li class="divider"></li>
                 <li class="bold">
                     <a href="/dashboard">Dashboard</a>
                 </li>
