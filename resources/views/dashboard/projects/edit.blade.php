@@ -25,7 +25,7 @@ $categories = [
                 <input type="text" name="title" id="title" value="{{ $project->title }}">
                 <label for="title">Title</label>
             </div>
-            <div class="input-field">
+            <div class="input-field" style="z-index: 100;">
                 <select name="category" id="category">
                     @foreach($categories as $category)
                         <option value="{{ $category }}" {{ $category === $project->category ? 'selected' : '' }}>{{ ucfirst($category) }}</option>
