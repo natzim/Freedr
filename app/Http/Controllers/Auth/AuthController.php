@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
+    protected $redirectTo = '/dashboard';
+
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
