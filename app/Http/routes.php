@@ -1,16 +1,10 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'dashboard'], function()
+{
+    get('/', 'DashboardController@index');
+    get('find', 'DashboardController@find');
+    get('profile', 'DashboardController@profile');
+    get('projects', 'DashboardController@projects');
+    get('matches', 'DashboardController@matches');
 });
