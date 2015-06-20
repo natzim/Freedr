@@ -20,5 +20,6 @@
                 <p>{{ $project->price_range }} budget</p>
             </div>
         </div>
+        <p>This is how your project will appear to other people.</p>
     </div>
 @endsection

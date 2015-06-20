@@ -28,6 +28,7 @@
                     <a href="#">Reviews</a>
                 </div>
             </div>
+            <p>This is how your profile will appear to other people.</p>
         @endif
     </div>
 @endsection
