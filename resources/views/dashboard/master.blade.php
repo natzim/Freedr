@@ -33,6 +33,12 @@
                 <i class="mdi-action-grade"></i> Matches
             </a>
         </li>
+        <li class="divider"></li>
+        <li>
+            <a href="/auth/logout">
+                <i class="mdi-action-exit-to-app"></i> Logout
+            </a>
+        </li>
     </ul>
     <main style="padding-left: 240px;">
         @yield('content')
