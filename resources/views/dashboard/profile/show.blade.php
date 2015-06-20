@@ -9,11 +9,10 @@
     <div class="container">
         <div class="card blue-grey darken-1">
             <div class="card-content white-text">
-                <span class="card-title">{{ $profile->user->name }} - {{ $profile->title }}</span>
+                <span class="card-title">{{ $profile->user->name }} <small>{{ $profile->title }}</small></span>
                 <span class="badge teal white-text">{{ ucfirst($profile->category) }}</span>
                 <p>{{ $profile->description }}</p>
-
-                <p>{{ $profile->hourly_rate }} per hour</p>
+                <p>I charge {{ $profile->hourly_rate }} per hour</p>
             </div>
             <div class="card-action">
                 <a href="{{ route('dashboard.profile.portfolio', $profile) }}">Portfolio</a>
