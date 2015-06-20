@@ -2,9 +2,12 @@
 
 <?php
 $categories = [
-    'websites',
+    'web',
     'design',
     'writing',
+    'art',
+    'law',
+    'translation',
 ];
 ?>
 
