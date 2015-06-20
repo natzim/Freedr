@@ -1,7 +1,7 @@
 @extends('auth.master')
 
 @section('content')
-    <h1>Login</h1>
+    <h4>Login</h4>
     <form method="post" action="/auth/login">
         {!! csrf_field() !!}
         <div class="input-field">
@@ -19,5 +19,7 @@
         <button class="btn waves-effect waves-light" type="submit" name="action">
             Login
         </button>
+        <br>
+        <a href="/auth/register">Don't have an account yet?</a>
     </form>
 @endsection
