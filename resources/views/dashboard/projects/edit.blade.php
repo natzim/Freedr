@@ -10,7 +10,7 @@ $categories = [
 
 @section('content')
     <div class="card-panel red white-text" style="margin-top: 0;">
-        <div class="container">
+        <div class="center">
             <h4>Edit project</h4>
         </div>
     </div>

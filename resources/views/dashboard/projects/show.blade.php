@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card-panel red white-text" style="margin-top: 0;">
-        <div class="container">
+        <div class="center">
             <h4>{{ $project->title }}</h4>
         </div>
     </div>
