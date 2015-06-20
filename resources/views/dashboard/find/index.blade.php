@@ -7,8 +7,12 @@
         </div>
     </div>
     <div class="container center">
-        <a class="waves-effect waves-light btn btn-large" href="{{ route('dashboard.find.projects') }}">Find projects</a>
+        <a class="waves-effect waves-light btn btn-large red" href="{{ route('dashboard.find.projects') }}">
+            <i class="mdi-action-search left"></i> Find projects
+        </a>
         <p>or</p>
-        <a class="waves-effect waves-light btn btn-large" href="{{ route('dashboard.find.freelancers') }}">Find freelancers</a>
+        <a class="waves-effect waves-light btn btn-large red" href="{{ route('dashboard.find.freelancers') }}">
+            <i class="mdi-action-search left"></i> Find freelancers
+        </a>
     </div>
 @endsection
