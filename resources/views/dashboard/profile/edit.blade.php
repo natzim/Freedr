@@ -37,6 +37,15 @@ $categories = [
                 <input type="text" name="hourly_rate" id="hourly_rate" value="{{ $profile->hourly_rate or '' }}">
                 <label for="hourly_rate">Hourly rate</label>
             </div>
+            <div class="switch">
+                <label>
+                    Private
+                    <input type="checkbox" checked>
+                    <span class="lever"></span>
+                    Public
+                </label>
+            </div>
+            <br>
             <button class="btn waves-effect waves-light" type="submit" name="action">
                 Update
             </button>

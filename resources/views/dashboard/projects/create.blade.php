@@ -37,6 +37,15 @@ $categories = [
                 <input type="text" name="price_range" id="price_range">
                 <label for="price_range">Budget</label>
             </div>
+            <div class="switch">
+                <label>
+                    Private
+                    <input type="checkbox" checked>
+                    <span class="lever"></span>
+                    Public
+                </label>
+            </div>
+            <br>
             <button class="btn waves-effect waves-light" type="submit" name="action">
                 Update
             </button>
