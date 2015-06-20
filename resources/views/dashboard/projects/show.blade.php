@@ -7,9 +7,11 @@
         </div>
     </div>
     <div class="container">
-        <a class="waves-effect waves-light btn" href="/dashboard/projects/{{ $project->id }}/edit">
-            <i class="mdi-editor-mode-edit left"></i> Edit
-        </a>
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+            <a class="btn-floating btn-large waves-effect waves-light" href="/dashboard/projects/{{ $project->id }}/edit">
+                <i class="mdi-editor-mode-edit"></i>
+            </a>
+        </div>
         <div class="card blue-grey darken-1">
             <div class="card-content white-text">
                 <span class="card-title">{{ $project->title }}</span>

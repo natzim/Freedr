@@ -8,7 +8,7 @@
     </div>
     <div class="container">
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a class="btn-floating btn-large waves-effect waves-light red" href="/dashboard/profile/edit">
+            <a class="btn-floating btn-large waves-effect waves-light" href="/dashboard/profile/edit">
                 <i class="mdi-editor-mode-edit"></i>
             </a>
         </div>
