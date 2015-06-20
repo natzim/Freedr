@@ -13,8 +13,7 @@
             </a>
         </div>
         @if (is_null($profile))
-            <p>Looks like you haven't set up a freelancer profile yet. Why don't you <a href="/dashboard/profile/edit">set
-                    one up</a>?</p>
+            <p>Looks like you haven't set up a freelancer profile yet. Why don't you <a href="/dashboard/profile/edit">set one up</a>?</p>
         @else
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
