@@ -8,7 +8,7 @@
     </div>
     @if ($profile->user->id === Auth::id())
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a class="btn-floating btn-large waves-effect waves-light green" href="/dashboard/profile/{{ $profile->id }}/add">
+            <a class="btn-floating btn-large waves-effect waves-light green" href="/dashboard/profile/{{ $profile->id }}/portfolio/add">
                 <i class="mdi-content-add"></i>
             </a>
         </div>
