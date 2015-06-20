@@ -5,9 +5,11 @@
         <h4>Projects</h4>
     </div>
     <div class="container">
-        <a class="waves-effect waves-light btn" href="/dashboard/projects/create">
-            <i class="mdi-content-add left"></i> Create
-        </a>
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+            <a class="btn-floating btn-large waves-effect waves-light green" href="/dashboard/projects/create">
+                <i class="mdi-content-add"></i>
+            </a>
+        </div>
         @forelse($projects as $project)
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
