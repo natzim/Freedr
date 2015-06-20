@@ -11,13 +11,38 @@ use Request;
 
 class FindController extends Controller
 {
+    private function findProjects()
+    {
+        $projects = Project::where('category', Auth::user()->freelancer->category)
+            ->orderBy('updated_at', 'desc')
+            ->get();
+
+        foreach($projects as $project)
+        {
+            if (Decision::where('project_id', $project->id)
+                ->where('freelancer_id', Auth::user()->freelancer->id)
+                ->where('decision', 0)
+                ->exists())
+            {
+                continue;
+            }
+
+            if (Match::where('project_id', $project->id)
+                ->where('freelancer_id', Auth::user()->freelancer->id)
+                ->exists())
+            {
+                continue;
+            }
+
+            return $project;
+        }
+
+        return null;
+    }
+
     public function projects()
     {
-        $project = Project::where('category', Auth::user()->freelancer->category)
-            ->orderBy('updated_at')
-            ->first();
-
-        // DO SOMETHING WITH DECISIONS
+        $project = $this->findProjects();
 
         return view('dashboard.find.projects', compact('project'));
     }
@@ -62,11 +87,38 @@ class FindController extends Controller
         return redirect()->route('dashboard.find.projects');
     }
 
+    private function findFreelancers()
+    {
+        $freelancers = Freelancer::where('category', Auth::user()->projects()->first()->category)
+            ->orderBy('updated_at', 'desc')
+            ->get();
+
+        foreach($freelancers as $freelancer)
+        {
+            if (Decision::where('project_id', Auth::user()->projects()->first()->id)
+                ->where('freelancer_id', $freelancer->id)
+                ->where('decision', 0)
+                ->exists())
+            {
+                continue;
+            }
+
+            if (Match::where('project_id', Auth::user()->projects()->first()->id)
+                ->where('freelancer_id', $freelancer->id)
+                ->exists())
+            {
+                continue;
+            }
+
+            return $freelancer;
+        }
+
+        return null;
+    }
+
     public function freelancers()
     {
-        $profile = Freelancer::where('category', Auth::user()->projects()->first()->category)
-            ->orderBy('updated_at')
-            ->first();
+        $profile = $this->findFreelancers();
 
         return view('dashboard.find.freelancers', compact('profile'));
     }

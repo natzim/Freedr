@@ -12,6 +12,7 @@ class Freelancer extends Model
         'title',
         'description',
         'hourly_rate',
+        'category',
     ];
 
     public function user()

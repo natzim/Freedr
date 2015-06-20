@@ -20,16 +20,9 @@ class Project extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function accepted()
+    public function decisions()
     {
-        return $this->hasManyThrough('App\Decision', 'App\Freelancer')
-            ->where('decision', 1);
-    }
-
-    public function rejected()
-    {
-        return $this->hasManyThrough('App\Decision', 'App\Freelancer')
-            ->where('decision', 0);
+        return $this->hasMany('App\Decision');
     }
 
     public function matches()
