@@ -129,6 +129,6 @@ Route::group(['prefix' => 'auth'], function()
     ]);
     post('register', [
         'uses' => 'Auth\AuthController@postRegister',
-        'as' => 'auth.postRegsiter',
+        'as' => 'auth.postRegister',
     ]);
 });
