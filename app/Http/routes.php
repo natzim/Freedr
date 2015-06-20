@@ -16,6 +16,11 @@ Route::group([
     get('profile/edit', 'FreelancerController@edit');
     post('profile/edit', 'FreelancerController@update');
     get('projects', 'DashboardController@projects');
+    get('projects/create', 'ProjectController@create');
+    post('projects/create', 'ProjectController@store');
+    get('projects/{id}', 'ProjectController@show');
+    get('projects/{id}/edit', 'ProjectController@edit');
+    put('projects/{id}/edit', 'ProjectController@update');
     get('matches', 'DashboardController@matches');
 });
 

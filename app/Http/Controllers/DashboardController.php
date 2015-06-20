@@ -25,7 +25,9 @@ class DashboardController extends Controller
 
     public function projects()
     {
-        return view('dashboard.projects.index');
+        $projects = Auth::user()->projects;
+
+        return view('dashboard.projects.index', compact('projects'));
     }
 
     public function matches()
