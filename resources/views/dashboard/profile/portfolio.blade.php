@@ -6,14 +6,21 @@
             <h4>{{ $profile->user->name }}</h4>
         </div>
     </div>
-    @if ($profile->user->id === Auth::id())
-        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a class="btn-floating btn-large waves-effect waves-light green" href="/dashboard/profile/{{ $profile->id }}/portfolio/add">
-                <i class="mdi-content-add"></i>
-            </a>
-        </div>
-    @endif
     <div class="container">
+        @if ($profile->user->id === Auth::id())
+            <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                <a class="btn-floating btn-large waves-effect waves-light green" href="/dashboard/profile/{{ $profile->id }}/portfolio/add">
+                    <i class="mdi-content-add"></i>
+                </a>
+            </div>
+            <a class="btn waves-effect waves-light" href="/dashboard/profile">
+                <i class="mdi-hardware-keyboard-arrow-left left"></i> Back to profile
+            </a>
+        @else
+            <a class="btn waves-effect waves-light" href="/dashboard/profile/{{ $profile->id }}">
+                <i class="mdi-hardware-keyboard-arrow-left left"></i> Back to profile
+            </a>
+        @endif
         @forelse($profile->portfolioItems as $item)
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
