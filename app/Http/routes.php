@@ -12,6 +12,8 @@ Route::group([
 {
     get('/', 'DashboardController@index');
     get('find', 'DashboardController@find');
+    get('find/projects', 'FindController@projects');
+    get('find/freelancers', 'FindController@freelancers');
     get('profile', 'DashboardController@profile');
     get('profile/edit', 'FreelancerController@edit');
     post('profile/edit', 'FreelancerController@update');

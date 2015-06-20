@@ -24,7 +24,7 @@ $categories = [
             <div class="input-field">
                 <select name="category" id="category">
                     @foreach($categories as $category)
-                        <option value="{{ $category }}" {{ $category === $profile->category ? 'selected' : '' }}>{{ ucfirst($category) }}</option>
+                        <option value="{{ $category }}" {{ isset($profile->category) && $category === $profile->category ? 'selected' : '' }}>{{ ucfirst($category) }}</option>
                     @endforeach
                 </select>
                 <label for="category">Category</label>
