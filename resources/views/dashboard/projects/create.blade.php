@@ -10,7 +10,9 @@ $categories = [
 
 @section('content')
     <div class="card-panel red white-text" style="margin-top: 0;">
-        <h4>Create project</h4>
+        <div class="container">
+            <h4>Create project</h4>
+        </div>
     </div>
     <div class="container">
         <form method="post" action="/dashboard/projects/create">

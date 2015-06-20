@@ -10,7 +10,9 @@ $categories = [
 
 @section('content')
     <div class="card-panel red white-text" style="margin-top: 0;">
-        <h4>Edit project</h4>
+        <div class="container">
+            <h4>Edit project</h4>
+        </div>
     </div>
     <div class="container">
         <form method="post" action="/dashboard/projects/{{ $project->id }}/edit">

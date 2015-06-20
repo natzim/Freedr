@@ -2,7 +2,9 @@
 
 @section('content')
     <div class="card-panel red white-text" style="margin-top: 0;">
-        <h4>{{ $project->title }}</h4>
+        <div class="container">
+            <h4>{{ $project->title }}</h4>
+        </div>
     </div>
     <div class="container">
         <a class="waves-effect waves-light btn" href="/dashboard/projects/{{ $project->id }}/edit">
