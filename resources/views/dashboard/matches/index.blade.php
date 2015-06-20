@@ -1,5 +1,5 @@
 @extends('dashboard.master')
 
 @section('content')
-    <h1>Matches</h1>
+    <h2>Matches</h2>
 @endsection

@@ -1,7 +1,7 @@
 @extends('dashboard.master')
 
 @section('content')
-    <h1>Profile</h1>
+    <h2>Profile</h2>
     <a class="waves-effect waves-light btn" href="/dashboard/profile/edit">
         <i class="mdi-editor-mode-edit left"></i> Edit
     </a>

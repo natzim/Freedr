@@ -26,10 +26,14 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/dashboard/projects">Projects</a>
+                    <a href="/dashboard/projects">
+                        <i class="mdi-action-wallet-travel"></i> Projects
+                    </a>
                 </li>
                 <li>
-                    <a href="/dashboard/matches">Matches</a>
+                    <a href="/dashboard/matches">
+                        <i class="mdi-action-grade"></i> Matches
+                    </a>
                 </li>
             </ul>
         </div>
