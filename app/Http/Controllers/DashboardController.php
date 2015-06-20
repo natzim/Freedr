@@ -8,7 +8,10 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard.index');
+        $profile = Auth::user()->freelancer;
+        $projects = Auth::user()->projects;
+
+        return view('dashboard.index', compact('profile', 'projects'));
     }
 
     public function find()
