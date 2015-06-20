@@ -2,9 +2,9 @@
 
 @section('layout')
     <ul class="side-nav fixed">
-        <li class="logo">
+        <li class="logo" style="padding-bottom: 115px; margin-top: 25px; margin-left: 15px;">
             <a class="brand-logo" href="/">
-                <img src="/img/logo.png" alt="freedr">
+                <img src="/img/logo.png" alt="freedr" height="150" width="150">
             </a>
         </li>
         <li class="divider"></li>
