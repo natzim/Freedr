@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+
 class DashboardController extends Controller
 {
     public function index()
@@ -16,7 +18,9 @@ class DashboardController extends Controller
 
     public function profile()
     {
-        return view('dashboard.profile.index');
+        $profile = Auth::user()->freelancer;
+
+        return view('dashboard.profile.index', compact('profile'));
     }
 
     public function projects()

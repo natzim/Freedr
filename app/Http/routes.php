@@ -13,6 +13,8 @@ Route::group([
     get('/', 'DashboardController@index');
     get('find', 'DashboardController@find');
     get('profile', 'DashboardController@profile');
+    get('profile/edit', 'FreelancerController@edit');
+    post('profile/edit', 'FreelancerController@update');
     get('projects', 'DashboardController@projects');
     get('matches', 'DashboardController@matches');
 });

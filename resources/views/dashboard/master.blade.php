@@ -11,13 +11,19 @@
                 </li>
                 <li class="divider"></li>
                 <li class="bold">
-                    <a href="/dashboard">Dashboard</a>
+                    <a href="/dashboard">
+                        <i class="mdi-action-dashboard"></i> Dashboard
+                    </a>
                 </li>
                 <li>
-                    <a href="/dashboard/find">Find</a>
+                    <a href="/dashboard/find">
+                        <i class="mdi-action-search"></i> Find
+                    </a>
                 </li>
                 <li>
-                    <a href="/dashboard/profile">Profile</a>
+                    <a href="/dashboard/profile">
+                        <i class="mdi-social-person"></i> Profile
+                    </a>
                 </li>
                 <li>
                     <a href="/dashboard/projects">Projects</a>

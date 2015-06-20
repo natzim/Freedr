@@ -8,6 +8,13 @@ class Freelancer extends Model
 {
     protected $table = 'freelancers';
 
+    protected $fillable = [
+        'user_id', // BAD!!!!
+        'title',
+        'description',
+        'hourly_rate',
+    ];
+
     public function review()
     {
         return $this->hasMany('App\FreelancerReview');
