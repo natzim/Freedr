@@ -13,6 +13,7 @@ class Project extends Model
         'title',
         'description',
         'price_range',
+        'category',
     ];
 
     public function user()

@@ -24,6 +24,7 @@ class FreelancerController extends Controller
             $freelancer->title = Request::get('title');
             $freelancer->description = Request::get('description');
             $freelancer->hourly_rate = Request::get('hourly_rate');
+            $freelancer->category = Request::get('category');
 
             $freelancer->save();
         }
