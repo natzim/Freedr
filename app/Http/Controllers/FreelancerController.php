@@ -22,20 +22,18 @@ class FreelancerController extends Controller
         {
             $freelancer = Auth::user()->freelancer;
 
-            $freelancer->title = Request::get('title');
-            $freelancer->description = Request::get('description');
-            $freelancer->hourly_rate = Request::get('hourly_rate');
-            $freelancer->category = Request::get('category');
+            $freelancer->fill(Request::all());
 
             $freelancer->save();
         }
         else
         {
             $input = Request::all();
+            $freelancer = Freelancer::create($input);
 
-            $input['user_id'] = Auth::id();
+            $freelancer->user()->associate(Auth::user());
 
-            Freelancer::create($input);
+            $freelancer->save();
         }
 
         return redirect()->route('dashboard.profile');
@@ -66,11 +64,11 @@ class FreelancerController extends Controller
     {
         $profile = Freelancer::findOrFail($id);
 
-        $input = Request::all();
+        $item = PortfolioItem::create(Request::all());
 
-        $input['freelancer_id'] = $profile->id;
+        $item->freelancer()->associate($profile);
 
-        PortfolioItem::create($input);
+        $item->save();
 
         return redirect()->route('dashboard.profile.portfolio', $id);
     }

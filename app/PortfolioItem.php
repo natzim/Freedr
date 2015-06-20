@@ -9,7 +9,6 @@ class PortfolioItem extends Model
     protected $table = 'portfolio_items';
 
     protected $fillable = [
-        'freelancer_id', // BAD!!!
         'description',
         'title',
         'image',
