@@ -9,33 +9,33 @@
         </li>
         <li class="divider"></li>
         <li class="bold {{ Request::is('dashboard') ? 'active' : '' }}">
-            <a href="/dashboard">
+            <a href="{{ route('dashboard') }}">
                 <i class="mdi-action-dashboard"></i> Dashboard
             </a>
         </li>
         <li class="{{ Request::is('dashboard/find*') ? 'active' : '' }}">
-            <a href="/dashboard/find">
+            <a href="{{ route('dashboard.find') }}">
                 <i class="mdi-action-search"></i> Find
             </a>
         </li>
         <li class="{{ Request::is('dashboard/profile*') ? 'active' : '' }}">
-            <a href="/dashboard/profile">
+            <a href="{{ route('dashboard.profile') }}">
                 <i class="mdi-social-person"></i> Profile
             </a>
         </li>
         <li class="{{ Request::is('dashboard/project*') ? 'active' : '' }}">
-            <a href="/dashboard/projects">
+            <a href="{{ route('dashboard.projects') }}">
                 <i class="mdi-action-wallet-travel"></i> Projects
             </a>
         </li>
         <li class="{{ Request::is('dashboard/matches*') ? 'active' : '' }}">
-            <a href="/dashboard/matches">
+            <a href="{{ route('dashboard.matches') }}">
                 <i class="mdi-action-grade"></i> Matches
             </a>
         </li>
         <li class="divider"></li>
         <li>
-            <a href="/auth/logout">
+            <a href="{{ route('auth.logout') }}">
                 <i class="mdi-action-exit-to-app"></i> Logout
             </a>
         </li>

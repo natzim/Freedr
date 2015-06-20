@@ -2,7 +2,7 @@
 
 @section('content')
     <h4>Login</h4>
-    <form method="post" action="/auth/login">
+    <form method="post" action="{{ route('auth.postLogin') }}">
         {!! csrf_field() !!}
         <div class="input-field">
             <input type="email" name="email" id="email" value="{{ old('email') }}">

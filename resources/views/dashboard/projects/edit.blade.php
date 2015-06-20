@@ -15,7 +15,7 @@ $categories = [
         </div>
     </div>
     <div class="container">
-        <form method="post" action="/dashboard/projects/{{ $project->id }}/edit">
+        <form method="post" action="{{ route('dashboard.projects.update', $project) }}">
             {!! csrf_field() !!}
             <input type="hidden" name="_method" value="put">
             <div class="input-field">

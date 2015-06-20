@@ -6,11 +6,11 @@
             <a id="logo-container" href="/" class="brand-logo">freedr</a>
             <ul class="right hide-on-med-and-down">
                 @if (Auth::check())
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/auth/logout">Logout</a></li>
+                    <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ route('auth.logout') }}">Logout</a></li>
                 @else
-                    <li><a href="/auth/login">Login</a></li>
-                    <li><a href="/auth/register">Register</a></li>
+                    <li><a href="{{ route('auth.login') }}">Login</a></li>
+                    <li><a href="{{ route('auth.register') }}">Register</a></li>
                 @endif
             </ul>
         </div>
@@ -23,7 +23,7 @@
                 <h5 class="header col s12 light">Like Tinder, for freelancers</h5>
             </div>
             <div class="row center">
-                <a href="/auth/register" class="btn-large waves-effect waves-light orange">Get Started</a>
+                <a href="{{ route('auth.register') }}" class="btn-large waves-effect waves-light orange">Get Started</a>
             </div>
             <br><br>
 

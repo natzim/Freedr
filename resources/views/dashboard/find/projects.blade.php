@@ -19,10 +19,10 @@
                 </div>
             </div>
             <div class="center">
-                <a class="btn waves-effect waves-light green" href="#">
+                <a class="btn waves-effect waves-light green" href="{{ route('dashboard.find.projects.accept', $project) }}">
                     <i class="mdi-navigation-check"></i>
                 </a>
-                <a class="btn waves-effect waves-light red" href="#">
+                <a class="btn waves-effect waves-light red" href="{{ route('dashboard.find.projects.deny', $project) }}">
                     <i class="mdi-navigation-close"></i>
                 </a>
             </div>

@@ -15,7 +15,7 @@ $categories = [
         </div>
     </div>
     <div class="container">
-        <form method="post" action="/dashboard/projects/create">
+        <form method="post" action="{{ route('dashboard.projects.store') }}">
             {!! csrf_field() !!}
             <div class="input-field">
                 <input type="text" name="title" id="title">

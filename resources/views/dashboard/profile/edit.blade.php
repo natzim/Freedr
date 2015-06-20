@@ -15,7 +15,7 @@ $categories = [
         </div>
     </div>
     <div class="container">
-        <form method="post" action="/dashboard/profile/edit">
+        <form method="post" action="{{ route('dashboard.profile.update') }}">
             {!! csrf_field() !!}
             <div class="input-field">
                 <input type="text" name="title" id="title" value="{{ $profile->title or '' }}">

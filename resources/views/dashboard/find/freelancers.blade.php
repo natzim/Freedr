@@ -17,19 +17,19 @@
                     <p>{{ $profile->hourly_rate }} per hour</p>
                 </div>
                 <div class="card-action">
-                    <a target="_blank" href="/dashboard/profile/{{ $profile->id }}/portfolio">Portfolio</a>
+                    <a target="_blank" href="{{ route('dashboard.profile.portfolio', $profile) }}">Portfolio</a>
                     <a target="_blank" href="#">Reviews</a>
                 </div>
             </div>
             <div class="center">
-                <form method="post" action="/dashboard/find/freelancers/{{ $profile->id }}/accept">
+                <form method="post" action="{{ route('dashboard.find.freelancers.accept', $profile) }}">
                     {!! csrf_field() !!}
                     <input type="hidden" name="_method" value="put">
                     <button class="btn waves-effect waves-light green">
                         <i class="mdi-navigation-check"></i>
                     </button>
                 </form>
-                <form method="post" action="/dashboard/find/freelancers/{{ $profile->id }}/deny">
+                <form method="post" action="{{ route('dashboard.find.freelancers.deny', $profile) }}">
                     {!! csrf_field() !!}
                     <input type="hidden" name="_method" value="put">
                     <button class="btn waves-effect waves-light red">

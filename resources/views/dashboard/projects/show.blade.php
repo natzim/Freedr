@@ -8,7 +8,7 @@
     </div>
     <div class="container">
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a class="btn-floating btn-large waves-effect waves-light" href="/dashboard/projects/{{ $project->id }}/edit">
+            <a class="btn-floating btn-large waves-effect waves-light" href="{{ route('dashboard.projects.edit', $project) }}">
                 <i class="mdi-editor-mode-edit"></i>
             </a>
         </div>

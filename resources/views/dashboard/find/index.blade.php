@@ -7,8 +7,8 @@
         </div>
     </div>
     <div class="container center">
-        <a class="waves-effect waves-light btn btn-large" href="/dashboard/find/projects">Find projects</a>
+        <a class="waves-effect waves-light btn btn-large" href="{{ route('dashboard.find.projects') }}">Find projects</a>
         <p>or</p>
-        <a class="waves-effect waves-light btn btn-large" href="/dashboard/find/freelancers">Find freelancers</a>
+        <a class="waves-effect waves-light btn btn-large" href="{{ route('dashboard.find.freelancers') }}">Find freelancers</a>
     </div>
 @endsection

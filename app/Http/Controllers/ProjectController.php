@@ -29,7 +29,7 @@ class ProjectController extends Controller
 
         Project::create($input);
 
-        return redirect('/dashboard/projects');
+        return redirect()->route('dashboard.projects');
     }
 
     public function edit($id)
@@ -47,6 +47,6 @@ class ProjectController extends Controller
 
         $project->save();
 
-        return redirect('/dashboard/projects/'.$project->id);
+        return redirect()->route('dashboard.projects.show', $id);
     }
 }

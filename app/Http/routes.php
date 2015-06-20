@@ -10,35 +10,125 @@ Route::group([
     'middleware' => 'auth',
 ], function()
 {
-    get('/', 'DashboardController@index');
-    get('find', 'DashboardController@find');
-    get('find/projects', 'FindController@projects');
-    put('find/projects/{id}/accept', 'FindController@acceptProject');
-    put('find/projects/{id}/deny', 'FindController@denyProject');
-    get('find/freelancers', 'FindController@freelancers');
-    put('find/freelancers/{id}/accept', 'FindController@acceptFreelancer');
-    put('find/freelancers/{id}/deny', 'FindController@denyFreelancer');
-    get('profile', 'DashboardController@profile');
-    get('profile/edit', 'FreelancerController@edit');
-    post('profile/edit', 'FreelancerController@update');
-    get('profile/{id}', 'FreelancerController@show');
-    get('profile/{id}/portfolio', 'FreelancerController@showPortfolio');
-    get('profile/{id}/portfolio/add', 'FreelancerController@add');
-    post('profile/{id}/portfolio/add', 'FreelancerController@addItem');
-    get('projects', 'DashboardController@projects');
-    get('projects/create', 'ProjectController@create');
-    post('projects/create', 'ProjectController@store');
-    get('projects/{id}', 'ProjectController@show');
-    get('projects/{id}/edit', 'ProjectController@edit');
-    put('projects/{id}/edit', 'ProjectController@update');
-    get('matches', 'DashboardController@matches');
+    // INDEX
+    get('/', [
+        'uses' => 'DashboardController@index',
+        'as' => 'dashboard',
+    ]);
+
+    // FIND
+    get('find', [
+        'uses' => 'DashboardController@find',
+        'as' => 'dashboard.find',
+    ]);
+    get('find/projects', [
+        'uses' => 'FindController@projects',
+        'as' => 'dashboard.find.projects',
+    ]);
+    put('find/projects/{id}/accept', [
+        'uses' => 'FindController@acceptProject',
+        'as' => 'dashboard.find.projects.accept',
+    ]);
+    put('find/projects/{id}/deny', [
+        'uses' => 'FindController@denyProject',
+        'as' => 'dashboard.find.projects.deny',
+    ]);
+    get('find/freelancers', [
+        'uses' => 'FindController@freelancers',
+        'as' => 'dashboard.find.freelancers',
+    ]);
+    put('find/freelancers/{id}/accept', [
+        'uses' => 'FindController@acceptFreelancer',
+        'as' => 'dashboard.find.freelancers.accept',
+    ]);
+    put('find/freelancers/{id}/deny', [
+        'uses' => 'FindController@denyFreelancer',
+        'as' => 'dashboard.find.freelancers.deny',
+    ]);
+
+    // PROFILE
+    get('profile', [
+        'uses' => 'DashboardController@profile',
+        'as' => 'dashboard.profile',
+    ]);
+    get('profile/edit', [
+        'uses' => 'FreelancerController@edit',
+        'as' => 'dashboard.profile.edit',
+    ]);
+    post('profile/edit', [
+        'uses' => 'FreelancerController@update',
+        'as' => 'dashboard.profile.update',
+    ]);
+    get('profile/{id}', [
+        'uses' => 'FreelancerController@show',
+        'as' => 'dashboard.profile.show',
+    ]);
+    get('profile/{id}/portfolio', [
+        'uses' => 'FreelancerController@showPortfolio',
+        'as' => 'dashboard.profile.portfolio',
+    ]);
+    get('profile/{id}/portfolio/add', [
+        'uses' => 'FreelancerController@add',
+        'as' => 'dashboard.profile.portfolio.add',
+    ]);
+    post('profile/{id}/portfolio/add', [
+        'uses' => 'FreelancerController@addItem',
+        'as' => 'dashboard.profile.portfolio.addItem',
+    ]);
+
+    // PROJECT
+    get('projects', [
+        'uses' => 'DashboardController@projects',
+        'as' => 'dashboard.projects'
+    ]);
+    get('projects/create', [
+        'uses' => 'ProjectController@create',
+        'as' => 'dashboard.projects.create',
+    ]);
+    post('projects/create', [
+        'uses' => 'ProjectController@store',
+        'as' => 'dashboard.projects.store',
+    ]);
+    get('projects/{id}', [
+        'uses' => 'ProjectController@show',
+        'as' => 'dashboard.projects.show',
+    ]);
+    get('projects/{id}/edit', [
+        'uses' => 'ProjectController@edit',
+        'as' => 'dashboard.projects.edit',
+    ]);
+    put('projects/{id}/edit', [
+        'uses' => 'ProjectController@update',
+        'as' => 'dashboard.projects.update',
+    ]);
+
+    // MATCHES
+    get('matches', [
+        'uses' => 'DashboardController@matches',
+        'as' => 'dashboard.matches',
+    ]);
 });
 
 Route::group(['prefix' => 'auth'], function()
 {
-    get('login', 'Auth\AuthController@getLogin');
-    post('login', 'Auth\AuthController@postLogin');
-    get('logout', 'Auth\AuthController@getLogout');
-    get('register', 'Auth\AuthController@getRegister');
-    post('register', 'Auth\AuthController@postRegister');
+    get('login', [
+        'uses' => 'Auth\AuthController@getLogin',
+        'as' => 'auth.login',
+    ]);
+    post('login', [
+        'uses' => 'Auth\AuthController@postLogin',
+        'as' => 'auth.postLogin',
+    ]);
+    get('logout', [
+        'uses' => 'Auth\AuthController@getLogout',
+        'as' => 'auth.logout',
+    ]);
+    get('register', [
+        'uses' => 'Auth\AuthController@getRegister',
+        'as' => 'auth.register',
+    ]);
+    post('register', [
+        'uses' => 'Auth\AuthController@postRegister',
+        'as' => 'auth.postRegsiter',
+    ]);
 });

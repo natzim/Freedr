@@ -9,15 +9,15 @@
     <div class="container">
         @if ($profile->user->id === Auth::id())
             <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-                <a class="btn-floating btn-large waves-effect waves-light green" href="/dashboard/profile/{{ $profile->id }}/portfolio/add">
+                <a class="btn-floating btn-large waves-effect waves-light green" href="{{ route('dashboard.profile.portfolio.add') }}">
                     <i class="mdi-content-add"></i>
                 </a>
             </div>
-            <a class="btn waves-effect waves-light" href="/dashboard/profile">
+            <a class="btn waves-effect waves-light" href="{{ route('dashboard.profile') }}">
                 <i class="mdi-hardware-keyboard-arrow-left left"></i> Back to profile
             </a>
         @else
-            <a class="btn waves-effect waves-light" href="/dashboard/profile/{{ $profile->id }}">
+            <a class="btn waves-effect waves-light" href="{{ route('dashboard.profile.show', $profile) }}">
                 <i class="mdi-hardware-keyboard-arrow-left left"></i> Back to profile
             </a>
         @endif

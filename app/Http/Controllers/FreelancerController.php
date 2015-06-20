@@ -38,7 +38,7 @@ class FreelancerController extends Controller
             Freelancer::create($input);
         }
 
-        return redirect('/dashboard/profile');
+        return redirect()->route('dashboard.profile');
     }
 
     public function show($id)
@@ -72,6 +72,6 @@ class FreelancerController extends Controller
 
         PortfolioItem::create($input);
 
-        return redirect('/dashboard/profile/'.$id.'/portfolio');
+        return redirect()->route('dashboard.profile.portfolio', $id);
     }
 }

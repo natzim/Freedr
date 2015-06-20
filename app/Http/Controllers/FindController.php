@@ -46,7 +46,7 @@ class FindController extends Controller
             ]);
         }
 
-        return redirect('/dashboard/find/projects');
+        return redirect()->route('dashboard.find.projects');
     }
 
     public function denyProject($id)
@@ -59,7 +59,7 @@ class FindController extends Controller
             'decision' => 0,
         ]);
 
-        return redirect('/dashboard/find/projects');
+        return redirect()->route('dashboard.find.projects');
     }
 
     public function freelancers()
@@ -95,7 +95,7 @@ class FindController extends Controller
             ]);
         }
 
-        return redirect('/dashboard/find/freelancers');
+        return redirect()->route('dashboard.find.freelancers');
     }
 
     public function denyFreelancer($id)
@@ -108,6 +108,6 @@ class FindController extends Controller
             'decision' => 0,
         ]);
 
-        return redirect('/dashboard/find/freelancers');
+        return redirect()->route('dashboard.find.freelancers');
     }
 }

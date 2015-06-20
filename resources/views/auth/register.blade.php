@@ -2,7 +2,7 @@
 
 @section('content')
     <h4>Register</h4>
-    <form method="post" action="/auth/register">
+    <form method="post" action="{{ route('auth.postRegister') }}">
         {!! csrf_field() !!}
         <div class="input-field">
             <input type="text" name="name" id="name" value="{{ old('name') }}">
@@ -24,6 +24,6 @@
             Register
         </button>
         <br>
-        <a href="/auth/login">Already have an account?</a>
+        <a href="{{ route('auth.login') }}">Already have an account?</a>
     </form>
 @endsection

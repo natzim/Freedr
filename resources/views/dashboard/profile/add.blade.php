@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="container">
-        <form method="post" action="/dashboard/profile/{{ $profile->id }}/portfolio/add">
+        <form method="post" action="{{ route('dashboard.profile.portfolio.addItem') }}">
             {!! csrf_field() !!}
             <div class="input-field">
                 <input type="text" name="title" id="title">
