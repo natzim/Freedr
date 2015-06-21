@@ -70,7 +70,7 @@ class FindController extends Controller
                 'project_id' => $id,
             ]);
 
-            dd("You have matched!");
+            return redirect()->route('dashboard.matches');
         }
         else
         {
@@ -150,7 +150,7 @@ class FindController extends Controller
                 'freelancer_id' => $id,
             ]);
 
-            dd("You have matched");
+            return redirect()->route('dashboard.matches');
         }
         else
         {
