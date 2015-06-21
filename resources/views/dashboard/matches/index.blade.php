@@ -30,6 +30,7 @@
                     <li class="collection-item avatar">
                         <img src="{{ $projectMatch->freelancer->user->image }}" class="circle">
                         <span class="title">{{ $projectMatch->freelancer->user->name }}</span>
+                        <a href="{{ route('dashboard.matches.reviews.new', $projectMatch->freelancer) }}">Leave a review</a>
                         <p>{{ $projectMatch->freelancer->title }}</p>
                         <p>Email: <a href="mailto:{{ $projectMatch->freelancer->user->email }}">{{ $projectMatch->freelancer->user->email }}</a></p>
                     </li>

@@ -72,4 +72,11 @@ class FreelancerController extends Controller
 
         return redirect()->route('dashboard.profile.portfolio', $id);
     }
+
+    public function reviews($id)
+    {
+        $profile = Freelancer::findOrFail($id);
+
+        return view('dashboard.profile.reviews', compact('profile'));
+    }
 }

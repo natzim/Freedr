@@ -24,7 +24,7 @@
                 </div>
                 <div class="card-action">
                     <a href="{{ route('dashboard.profile.portfolio', $profile) }}">Portfolio</a>
-                    <a href="#">Reviews</a>
+                    <a href="{{ route('dashboard.profile.reviews', $profile) }}">Reviews</a>
                 </div>
             </div>
             <p>This is how your profile will appear to other people.</p>

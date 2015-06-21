@@ -75,6 +75,10 @@ Route::group([
         'uses' => 'FreelancerController@addItem',
         'as' => 'dashboard.profile.portfolio.addItem',
     ]);
+    get('profile/{id}/reviews', [
+        'uses' => 'FreelancerController@reviews',
+        'as' => 'dashboard.profile.reviews',
+    ]);
 
     // PROJECT
     get('projects', [
@@ -106,6 +110,18 @@ Route::group([
     get('matches', [
         'uses' => 'DashboardController@matches',
         'as' => 'dashboard.matches',
+    ]);
+    get('matches/{id}/reviews', [
+        'uses' => 'MatchController@reviews',
+        'as' => 'dashboard.matches.reviews',
+    ]);
+    get('matches/{id}/reviews/new', [
+        'uses' => 'MatchController@newReview',
+        'as' => 'dashboard.matches.reviews.new',
+    ]);
+    post('matches/{id}/reviews/new', [
+        'uses' => 'MatchController@storeReview',
+        'as' => 'dashboard.matches.reviews.store',
     ]);
 });
 

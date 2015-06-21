@@ -8,6 +8,11 @@ class FreelancerReview extends Model
 {
     protected $table = 'freelancer_reviews';
 
+    protected $fillable = [
+        'rating',
+        'description',
+    ];
+
     public function user()
     {
         return $this->belongsTo('App\User');

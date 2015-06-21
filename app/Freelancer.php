@@ -39,4 +39,9 @@ class Freelancer extends Model
     {
         return $this->hasMany('App\Match');
     }
+
+    public function reviews()
+    {
+        return $this->hasMany('App\FreelancerReview');
+    }
 }
