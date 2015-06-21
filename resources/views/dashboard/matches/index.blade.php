@@ -30,7 +30,7 @@
                     <li class="collection-item">
                         <a href="{{ route('dashboard.profile.show', $projectMatch->freelancer) }}"><h5>{{ $projectMatch->freelancer->user->name }} <small>{{ $projectMatch->freelancer->title }}</small></h5></a>
                         <a class="btn waves-effect waves-light blue" href="{{ route('dashboard.matches.reviews.new', $projectMatch->freelancer) }}">Leave a review</a>
-                        <a class="btn waves-effect waves-light red" href="{{ route('dashboard.matches.chat', $freelancerMatch) }}">Chat</a>
+                        <a class="btn waves-effect waves-light red" href="{{ route('dashboard.matches.chat', $projectMatch) }}">Chat</a>
                     </li>
                 @endforeach
             </ul>
