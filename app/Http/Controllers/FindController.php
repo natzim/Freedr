@@ -115,6 +115,13 @@ class FindController extends Controller
                 continue;
             }
 
+            if (Decision::where('project_id', Auth::user()->projects()->first()->id)
+                ->where('freelancer_id', $freelancer->id)
+                ->where('user_id', Auth::id()))
+            {
+                continue;
+            }
+
             if (Match::where('project_id', Auth::user()->projects()->first()->id)
                 ->where('freelancer_id', $freelancer->id)
                 ->exists())
