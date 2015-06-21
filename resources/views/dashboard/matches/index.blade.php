@@ -14,8 +14,8 @@
             <ul class="collection">
                 @foreach($freelancerMatches as $freelancerMatch)
                     <li class="collection-item">
-                        <a href="{{ route('dashboard.projects.show', $freelancerMatch->project) }}">{{ $freelancerMatch->project->title }}</a>
-                        <p>Email: <a href="mailto:{{ $freelancerMatch->project->user->email }}">{{ $freelancerMatch->project->user->email }}</a></p>
+                        <a href="{{ route('dashboard.projects.show', $freelancerMatch->project) }}"><h5>{{ $freelancerMatch->project->title }}</h5></a>
+                        <a href="{{ route('dashboard.profile.show', $freelancerMatch->project->user) }}">{{ $freelancerMatch->project->user->name }}</a><br>
                         <a class="btn waves-effect waves-light red" href="{{ route('dashboard.matches.chat', $freelancerMatch) }}">Chat</a>
                     </li>
                 @endforeach
@@ -28,8 +28,7 @@
             <ul class="collection">
                 @foreach($projectMatches as $projectMatch)
                     <li class="collection-item">
-                        <a href="{{ route('dashboard.profile.show', $projectMatch->freelancer) }}">{{ $projectMatch->freelancer->user->name }} <small>{{ $projectMatch->freelancer->title }}</small></a>
-                        <p>Email: <a href="mailto:{{ $projectMatch->freelancer->user->email }}">{{ $projectMatch->freelancer->user->email }}</a></p>
+                        <a href="{{ route('dashboard.profile.show', $projectMatch->freelancer) }}"><h5>{{ $projectMatch->freelancer->user->name }} <small>{{ $projectMatch->freelancer->title }}</small></h5></a>
                         <a class="btn waves-effect waves-light blue" href="{{ route('dashboard.matches.reviews.new', $projectMatch->freelancer) }}">Leave a review</a>
                         <a class="btn waves-effect waves-light red" href="{{ route('dashboard.matches.chat', $freelancerMatch) }}">Chat</a>
                     </li>

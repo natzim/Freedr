@@ -26,7 +26,7 @@
                 </div>
             </div>
         @empty
-            <p>Looks like you don't have any projects, why not <a href="{{ route('dashboard.projects.create') }}">create one</a>?</p>
+            <p class="flow-text">Looks like you don't have any projects, why not <a href="{{ route('dashboard.projects.create') }}">create one</a>?</p>
         @endforelse
     </div>
 @endsection
