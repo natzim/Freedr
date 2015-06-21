@@ -9,7 +9,7 @@
     <div class="container">
         <h4>Your gigs</h4>
         @if (is_null($freelancerMatches))
-            <p>No results!</p>
+            <p class="flow-text">No new matches!</p>
         @else
             <ul class="collection">
                 @foreach($freelancerMatches as $freelancerMatch)
@@ -22,7 +22,7 @@
         @endif
         <h4>Your projects</h4>
         @if ($projectMatches->isEmpty())
-            <p>No results!</p>
+            <p class="flow-text">No new matches!</p>
         @else
             <ul class="collection">
                 @foreach($projectMatches as $projectMatch)

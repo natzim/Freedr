@@ -11,8 +11,7 @@
             <a class="waves-effect waves-light btn btn-large red" href="{{ route('dashboard.find.projects') }}">
                 <i class="mdi-action-search left"></i> Find projects
             </a>
-
-            <p>or</p>
+            <p class="flow-text">or</p>
             <a class="waves-effect waves-light btn btn-large red" href="{{ route('dashboard.find.freelancers') }}">
                 <i class="mdi-action-search left"></i> Find freelancers
             </a>

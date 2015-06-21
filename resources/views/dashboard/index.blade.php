@@ -9,7 +9,7 @@
     <div class="container">
         <h4>Your profile</h4>
         @if (is_null($profile))
-            <p>Looks like you don't have a freelancer profile, why not <a href="{{ route('dashboard.profile.edit') }}">create one</a>?</p>
+            <p class="flow-text">Looks like you don't have a freelancer profile, why not <a href="{{ route('dashboard.profile.edit') }}">create one</a>?</p>
         @else
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
@@ -54,7 +54,7 @@
                 </div>
             </div>
         @empty
-            <p>Looks like you don't have any projects, why not <a href="{{ route('dashboard.projects.create') }}">create one</a>?</p>
+            <p class="flow-text">Looks like you don't have any projects, why not <a href="{{ route('dashboard.projects.create') }}">create one</a>?</p>
         @endforelse
     </div>
 @endsection
