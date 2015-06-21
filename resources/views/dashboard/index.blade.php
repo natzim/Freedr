@@ -9,19 +9,18 @@
     <div class="container">
         <h4>Profile</h4>
         @if (is_null($profile))
-            <p>Looks like you don't have a freelancer profile, why not <a href="/dashboard/profile/edit">create one</a>?</p>
+            <p>Looks like you don't have a freelancer profile, why not <a href="{{ route('dashboard.profile.edit') }}">create one</a>?</p>
         @else
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
-                    <span class="card-title">{{ Auth::user()->name }} - {{ $profile->title }}</span>
+                    <span class="card-title">{{ Auth::user()->name }} <small>{{ $profile->title }}</small></span>
                     <span class="badge teal white-text">{{ ucfirst($profile->category) }}</span>
                     <p>{{ $profile->description }}</p>
-
-                    <p>{{ $profile->hourly_rate }} per hour</p>
+                    <p>I charge {{ $profile->hourly_rate }} per hour</p>
                 </div>
                 <div class="card-action">
-                    <a href="/dashboard/profile/{{ $profile->id }}/portfolio">Portfolio</a>
-                    <a href="#">Reviews</a>
+                    <a href="{{ route('dashboard.profile.portfolio', $profile) }}">Portfolio</a>
+                    <a href="{{ route('dashboard.profile.reviews', $profile) }}">Reviews</a>
                 </div>
             </div>
         @endif
@@ -35,12 +34,12 @@
                     <p>{{ $project->price_range }} budget</p>
                 </div>
                 <div class="card-action">
-                    <a href="/dashboard/projects/{{ $project->id }}">View</a>
-                    <a href="/dashboard/projects/{{ $project->id }}/edit">Edit</a>
+                    <a href="{{ route('dashboard.projects.show', $project) }}">View</a>
+                    <a href="{{ route('dashboard.projects.edit', $project) }}">Edit</a>
                 </div>
             </div>
         @empty
-            <p>Looks like you don't have any projects, why not <a href="/dashboard/projects/create">create one</a>?</p>
+            <p>Looks like you don't have any projects, why not <a href="{{ route('dashboard.projects.create') }}">create one</a>?</p>
         @endforelse
     </div>
 @endsection

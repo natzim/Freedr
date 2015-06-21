@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-action">
                     <a target="_blank" href="{{ route('dashboard.profile.portfolio', $profile) }}">Portfolio</a>
-                    <a target="_blank" href="#">Reviews</a>
+                    <a target="_blank" href="{{ route('dashboard.profile.reviews', $profile) }}">Reviews</a>
                 </div>
             </div>
             <div class="center">
