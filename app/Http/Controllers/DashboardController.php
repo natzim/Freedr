@@ -43,7 +43,7 @@ class DashboardController extends Controller
             $freelancerMatches = Auth::user()->freelancer->matches;
         }
 
-        if (!is_null(Auth::user()->projects))
+        if (Auth::user()->projects->count() !== 0)
         {
             $projectMatches = Auth::user()->projects()->first()->matches;
         }
