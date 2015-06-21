@@ -36,21 +36,25 @@
                     </a>
                 </div>
             </div>
-            <div class="center">
-                <form method="post" action="{{ route('dashboard.find.freelancers.accept', $profile) }}">
-                    {!! csrf_field() !!}
-                    <input type="hidden" name="_method" value="put">
-                    <button class="btn waves-effect waves-light green">
-                        <i class="mdi-navigation-check"></i>
-                    </button>
-                </form>
-                <form method="post" action="{{ route('dashboard.find.freelancers.deny', $profile) }}">
-                    {!! csrf_field() !!}
-                    <input type="hidden" name="_method" value="put">
-                    <button class="btn waves-effect waves-light red">
-                        <i class="mdi-navigation-close"></i>
-                    </button>
-                </form>
+            <div class="center row">
+                <div class="col s6">
+                    <form method="post" action="{{ route('dashboard.find.freelancers.accept', $profile) }}">
+                        {!! csrf_field() !!}
+                        <input type="hidden" name="_method" value="put">
+                        <button class="btn waves-effect waves-light green">
+                            <i class="mdi-navigation-check"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="col s6">
+                    <form method="post" action="{{ route('dashboard.find.freelancers.deny', $profile) }}">
+                        {!! csrf_field() !!}
+                        <input type="hidden" name="_method" value="put">
+                        <button class="btn waves-effect waves-light red">
+                            <i class="mdi-navigation-close"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
         @endif
     </div>

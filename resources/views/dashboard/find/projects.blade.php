@@ -18,21 +18,25 @@
                 <p>{{ $project->price_range }} budget</p>
             </div>
         </div>
-        <div class="center">
-            <form method="post" action="{{ route('dashboard.find.projects.accept', $project) }}">
-                {!! csrf_field() !!}
-                <input type="hidden" name="_method" value="put">
-                <button class="btn waves-effect waves-light green">
-                    <i class="mdi-navigation-check"></i>
-                </button>
-            </form>
-            <form method="post" action="{{ route('dashboard.find.projects.deny', $project) }}">
-                {!! csrf_field() !!}
-                <input type="hidden" name="_method" value="put">
-                <a class="btn waves-effect waves-light red">
-                    <i class="mdi-navigation-close"></i>
-                </a>
-            </form>
+        <div class="center row">
+            <div class="col s6">
+                <form method="post" action="{{ route('dashboard.find.projects.accept', $project) }}">
+                    {!! csrf_field() !!}
+                    <input type="hidden" name="_method" value="put">
+                    <button class="btn waves-effect waves-light green">
+                        <i class="mdi-navigation-check"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="col s6">
+                <form method="post" action="{{ route('dashboard.find.projects.deny', $project) }}">
+                    {!! csrf_field() !!}
+                    <input type="hidden" name="_method" value="put">
+                    <a class="btn waves-effect waves-light red">
+                        <i class="mdi-navigation-close"></i>
+                    </a>
+                </form>
+            </div>
         </div>
         @endif
     </div>
