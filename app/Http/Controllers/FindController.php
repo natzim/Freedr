@@ -117,7 +117,8 @@ class FindController extends Controller
 
             if (Decision::where('project_id', Auth::user()->projects()->first()->id)
                 ->where('freelancer_id', $freelancer->id)
-                ->where('user_id', Auth::id()))
+                ->where('user_id', Auth::id())
+                ->exists())
             {
                 continue;
             }
