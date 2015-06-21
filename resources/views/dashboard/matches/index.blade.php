@@ -21,7 +21,7 @@
             </ul>
         @endif
         <h4>Your projects</h4>
-        @if (is_null($projectMatches))
+        @if ($projectMatches->isEmpty())
             <p>No results!</p>
         @else
             <ul class="collection">
