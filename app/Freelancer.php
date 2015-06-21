@@ -30,20 +30,13 @@ class Freelancer extends Model
         return $this->hasMany('App\PortfolioItem');
     }
 
-    public function accepted()
+    public function decisions()
     {
-        return $this->hasManyThrough('App\Decision', 'App\Project')
-            ->where('decision', 1);
-    }
-
-    public function rejected()
-    {
-        return $this->hasManyThrough('App\Decision', 'App\Project')
-            ->where('decision', 0);
+        return $this->hasMany('App\Decision');
     }
 
     public function matches()
     {
-        return $this->hasManyThrough('App\Match', 'App\Project');
+        return $this->hasMany('App\Match');
     }
 }

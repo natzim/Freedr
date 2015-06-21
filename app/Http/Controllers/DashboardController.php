@@ -35,6 +35,19 @@ class DashboardController extends Controller
 
     public function matches()
     {
-        return view('dashboard.matches.index');
+        $freelancerMatches = null;
+        $projectMatches = null;
+
+        if (!is_null(Auth::user()->freelancer))
+        {
+            $freelancerMatches = Auth::user()->freelancer->matches;
+        }
+
+        if (!is_null(Auth::user()->projects))
+        {
+            $projectMatches = Auth::user()->projects()->first()->matches;
+        }
+
+        return view('dashboard.matches.index', compact('freelancerMatches', 'projectMatches'));
     }
 }

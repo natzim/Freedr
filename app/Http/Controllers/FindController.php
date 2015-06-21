@@ -61,6 +61,8 @@ class FindController extends Controller
                 'freelancer_id' => $profileId,
                 'project_id' => $id,
             ]);
+
+            dd("You have matched!");
         }
         else
         {
@@ -137,6 +139,8 @@ class FindController extends Controller
                 'project_id' => $projectId,
                 'freelancer_id' => $id,
             ]);
+
+            dd("You have matched");
         }
         else
         {

@@ -9,7 +9,7 @@
     <div class="container">
         @if ($profile->user->id === Auth::id())
             <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-                <a class="btn-floating btn-large waves-effect waves-light green" href="{{ route('dashboard.profile.portfolio.add') }}">
+                <a class="btn-floating btn-large waves-effect waves-light green" href="{{ route('dashboard.profile.portfolio.add', $profile) }}">
                     <i class="mdi-content-add"></i>
                 </a>
             </div>

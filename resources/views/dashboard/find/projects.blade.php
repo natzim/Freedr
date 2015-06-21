@@ -19,12 +19,20 @@
                 </div>
             </div>
             <div class="center">
-                <a class="btn waves-effect waves-light green" href="{{ route('dashboard.find.projects.accept', $project) }}">
-                    <i class="mdi-navigation-check"></i>
-                </a>
-                <a class="btn waves-effect waves-light red" href="{{ route('dashboard.find.projects.deny', $project) }}">
-                    <i class="mdi-navigation-close"></i>
-                </a>
+                <form method="post" action="{{ route('dashboard.find.projects.accept', $project) }}">
+                    {!! csrf_field() !!}
+                    <input type="hidden" name="_method" value="put">
+                    <button class="btn waves-effect waves-light green">
+                        <i class="mdi-navigation-check"></i>
+                    </button>
+                </form>
+                <form method="post" action="{{ route('dashboard.find.projects.deny', $project) }}">
+                    {!! csrf_field() !!}
+                    <input type="hidden" name="_method" value="put">
+                    <a class="btn waves-effect waves-light red">
+                        <i class="mdi-navigation-close"></i>
+                    </a>
+                </form>
             </div>
         </div>
     @endif

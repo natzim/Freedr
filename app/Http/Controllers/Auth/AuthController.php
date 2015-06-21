@@ -61,6 +61,7 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'image' => 'http://gurucul.com/wp-content/uploads/2015/01/default-user-icon-profile.png',
         ]);
     }
 }

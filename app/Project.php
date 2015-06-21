@@ -27,6 +27,6 @@ class Project extends Model
 
     public function matches()
     {
-        return $this->hasManyThrough('App\Match', 'App\Freelancer');
+        return $this->hasMany('App\Match');
     }
 }
