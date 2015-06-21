@@ -123,6 +123,10 @@ Route::group([
         'uses' => 'MatchController@storeReview',
         'as' => 'dashboard.matches.reviews.store',
     ]);
+    get('matches/{id}/chat', [
+        'uses' => 'MatchController@chat',
+        'as' => 'dashboard.matches.chat',
+    ]);
 });
 
 Route::group(['prefix' => 'auth'], function()

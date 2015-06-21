@@ -16,12 +16,13 @@
                     <li class="collection-item">
                         <a href="{{ route('dashboard.projects.show', $freelancerMatch->project) }}">{{ $freelancerMatch->project->title }}</a>
                         <p>Email: <a href="mailto:{{ $freelancerMatch->project->user->email }}">{{ $freelancerMatch->project->user->email }}</a></p>
+                        <a class="btn waves-effect waves-light red" href="{{ route('dashboard.matches.chat', $freelancerMatch) }}">Chat</a>
                     </li>
                 @endforeach
             </ul>
         @endif
         <h4>Your projects</h4>
-        @if ($projectMatches->isEmpty())
+        @if (is_null($projectMatches) || $projectMatches->isEmpty())
             <p class="flow-text">No new matches!</p>
         @else
             <ul class="collection">
@@ -29,7 +30,8 @@
                     <li class="collection-item">
                         <a href="{{ route('dashboard.profile.show', $projectMatch->freelancer) }}">{{ $projectMatch->freelancer->user->name }} <small>{{ $projectMatch->freelancer->title }}</small></a>
                         <p>Email: <a href="mailto:{{ $projectMatch->freelancer->user->email }}">{{ $projectMatch->freelancer->user->email }}</a></p>
-                        <a class="btn waves-effect waves-light red" href="{{ route('dashboard.matches.reviews.new', $projectMatch->freelancer) }}">Leave a review</a>
+                        <a class="btn waves-effect waves-light blue" href="{{ route('dashboard.matches.reviews.new', $projectMatch->freelancer) }}">Leave a review</a>
+                        <a class="btn waves-effect waves-light red" href="{{ route('dashboard.matches.chat', $freelancerMatch) }}">Chat</a>
                     </li>
                 @endforeach
             </ul>

@@ -16,5 +16,6 @@
         $('select').material_select();
     });
     </script>
+    @yield('scripts')
 </body>
 </html>

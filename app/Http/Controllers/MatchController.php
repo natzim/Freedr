@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Freelancer;
 use App\FreelancerReview;
+use App\Match;
 use Auth;
 use Request;
 
@@ -28,5 +29,12 @@ class MatchController extends Controller
         $review->save();
 
         return redirect()->route('dashboard.matches');
+    }
+
+    public function chat($id)
+    {
+        $match = Match::findOrFail($id);
+
+        return view('dashboard.matches.chat', compact('match'));
     }
 }
