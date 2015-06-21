@@ -13,9 +13,8 @@
         @else
             <ul class="collection">
                 @foreach($freelancerMatches as $freelancerMatch)
-                    <li class="collection-item avatar">
-                        <img src="{{ $freelancerMatch->project->user->image }}" class="circle">
-                        <span class="title">{{ $freelancerMatch->project->title }}</span>
+                    <li class="collection-item">
+                        <a href="{{ route('dashboard.projects.show', $freelancerMatch->project) }}">{{ $freelancerMatch->project->title }}</a>
                         <p>Email: <a href="mailto:{{ $freelancerMatch->project->user->email }}">{{ $freelancerMatch->project->user->email }}</a></p>
                     </li>
                 @endforeach
@@ -27,12 +26,10 @@
         @else
             <ul class="collection">
                 @foreach($projectMatches as $projectMatch)
-                    <li class="collection-item avatar">
-                        <img src="{{ $projectMatch->freelancer->user->image }}" class="circle">
-                        <span class="title">{{ $projectMatch->freelancer->user->name }}</span>
-                        <a href="{{ route('dashboard.matches.reviews.new', $projectMatch->freelancer) }}">Leave a review</a>
-                        <p>{{ $projectMatch->freelancer->title }}</p>
+                    <li class="collection-item">
+                        <a href="{{ route('dashboard.profile.show', $projectMatch->freelancer) }}">{{ $projectMatch->freelancer->user->name }} <small>{{ $projectMatch->freelancer->title }}</small></a>
                         <p>Email: <a href="mailto:{{ $projectMatch->freelancer->user->email }}">{{ $projectMatch->freelancer->user->email }}</a></p>
+                        <a class="btn waves-effect waves-light red" href="{{ route('dashboard.matches.reviews.new', $projectMatch->freelancer) }}">Leave a review</a>
                     </li>
                 @endforeach
             </ul>
