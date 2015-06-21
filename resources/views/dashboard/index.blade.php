@@ -20,7 +20,20 @@
                 </div>
                 <div class="card-action">
                     <a href="{{ route('dashboard.profile.portfolio', $profile) }}">Portfolio</a>
-                    <a href="{{ route('dashboard.profile.reviews', $profile) }}">Reviews</a>
+                    <a href="{{ route('dashboard.profile.reviews', $profile) }}">
+                        Reviews
+                        <?php
+                        $averageRating = 0;
+                        foreach($profile->reviews as $review)
+                        {
+                            $averageRating += $review->rating;
+                        }
+                        $averageRating = floor($averageRating / $profile->reviews()->count());
+                        ?>
+                        @for($i = 0; $i < $averageRating; $i++)
+                            <i class="mdi-action-grade"></i>
+                        @endfor
+                    </a>
                 </div>
             </div>
         @endif

@@ -20,7 +20,9 @@
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
                     <span class="card-title">{{ $review->user->name }}</span>
-                    <p>{{ $review->rating }}/5</p>
+                        @for($i = 0; $i < $review->rating; $i++)
+                            <i class="mdi-action-grade"></i>
+                        @endfor
                     <p>{{ $review->description }}</p>
                 </div>
             </div>
