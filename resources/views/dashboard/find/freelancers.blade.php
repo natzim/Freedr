@@ -20,17 +20,19 @@
                     <a target="_blank" href="{{ route('dashboard.profile.portfolio', $profile) }}">Portfolio</a>
                     <a target="_blank" href="{{ route('dashboard.profile.reviews', $profile) }}">
                         Reviews
-                        <?php
-                        $averageRating = 0;
-                        foreach($profile->reviews as $review)
-                        {
-                            $averageRating += $review->rating;
-                        }
-                        $averageRating = floor($averageRating / $profile->reviews()->count());
-                        ?>
-                        @for($i = 0; $i < $averageRating; $i++)
-                            <i class="mdi-action-grade"></i>
-                        @endfor
+                        @if($profile->reviews()->count() > 0)
+                            <?php
+                            $averageRating = 0;
+                            foreach($profile->reviews as $review)
+                            {
+                                $averageRating += $review->rating;
+                            }
+                            $averageRating = floor($averageRating / $profile->reviews()->count());
+                            ?>
+                            @for($i = 0; $i < $averageRating; $i++)
+                                <i class="mdi-action-grade"></i>
+                            @endfor
+                        @endif
                     </a>
                 </div>
             </div>
