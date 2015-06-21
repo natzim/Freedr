@@ -27,6 +27,14 @@ class FindController extends Controller
                 continue;
             }
 
+            if (Decision::where('project_id', $project->id)
+                ->where('freelancer_id', Auth::user()->freelancer->id)
+                ->where('user_id', Auth::id())
+                ->exists())
+            {
+                continue;
+            }
+
             if (Match::where('project_id', $project->id)
                 ->where('freelancer_id', Auth::user()->freelancer->id)
                 ->exists())
@@ -67,6 +75,7 @@ class FindController extends Controller
         else
         {
             Decision::create([
+                'user_id' => Auth::id(),
                 'freelancer_id' => $profileId,
                 'project_id' => $id,
                 'decision' => 1,
@@ -81,6 +90,7 @@ class FindController extends Controller
         $profileId = Auth::user()->freelancer->id;
 
         Decision::create([
+            'user_id' => Auth::id(),
             'freelancer_id' => $profileId,
             'project_id' => $id,
             'decision' => 0,
@@ -145,6 +155,7 @@ class FindController extends Controller
         else
         {
             Decision::create([
+                'user_id' => Auth::id(),
                 'project_id' => $projectId,
                 'freelancer_id' => $id,
                 'decision' => 1,
@@ -159,6 +170,7 @@ class FindController extends Controller
         $projectId = Auth::user()->projects()->first()->id;
 
         Decision::create([
+            'user_id' => Auth::id(),
             'project_id' => $projectId,
             'freelancer_id' => $id,
             'decision' => 0,

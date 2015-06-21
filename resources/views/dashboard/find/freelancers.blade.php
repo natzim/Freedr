@@ -6,10 +6,10 @@
             <h4>Find freelancers</h4>
         </div>
     </div>
-    @if (is_null($profile))
-        <p>Sorry, there are no more freelancers in the queue. Try again in a bit.</p>
-    @else
-        <div class="container">
+    <div class="container">
+        @if (is_null($profile))
+            <p>Sorry, there are no more freelancers in the queue. Try again in a bit.</p>
+        @else
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
                     <span class="card-title">{{ $profile->user->name }} <small>{{ $profile->title }}</small></span>
@@ -37,6 +37,6 @@
                     </button>
                 </form>
             </div>
-        </div>
-    @endif
+        @endif
+    </div>
 @endsection

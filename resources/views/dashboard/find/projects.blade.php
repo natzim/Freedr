@@ -6,34 +6,34 @@
             <h4>Find projects</h4>
         </div>
     </div>
-    @if (is_null($project))
-        <p>Sorry, there are no more projects for you to view. Try again in a bit.</p>
-    @else
-        <div class="container">
-            <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                    <span class="card-title">{{ $project->title }}</span>
-                    <span class="badge teal white-text">{{ ucfirst($project->category) }}</span>
-                    <p>{{ $project->description }}</p>
-                    <p>{{ $project->price_range }} budget</p>
-                </div>
-            </div>
-            <div class="center">
-                <form method="post" action="{{ route('dashboard.find.projects.accept', $project) }}">
-                    {!! csrf_field() !!}
-                    <input type="hidden" name="_method" value="put">
-                    <button class="btn waves-effect waves-light green">
-                        <i class="mdi-navigation-check"></i>
-                    </button>
-                </form>
-                <form method="post" action="{{ route('dashboard.find.projects.deny', $project) }}">
-                    {!! csrf_field() !!}
-                    <input type="hidden" name="_method" value="put">
-                    <a class="btn waves-effect waves-light red">
-                        <i class="mdi-navigation-close"></i>
-                    </a>
-                </form>
+    <div class="container">
+        @if (is_null($project))
+            <p>Sorry, there are no more projects for you to view. Try again in a bit.</p>
+        @else
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">{{ $project->title }}</span>
+                <span class="badge teal white-text">{{ ucfirst($project->category) }}</span>
+                <p>{{ $project->description }}</p>
+                <p>{{ $project->price_range }} budget</p>
             </div>
         </div>
-    @endif
+        <div class="center">
+            <form method="post" action="{{ route('dashboard.find.projects.accept', $project) }}">
+                {!! csrf_field() !!}
+                <input type="hidden" name="_method" value="put">
+                <button class="btn waves-effect waves-light green">
+                    <i class="mdi-navigation-check"></i>
+                </button>
+            </form>
+            <form method="post" action="{{ route('dashboard.find.projects.deny', $project) }}">
+                {!! csrf_field() !!}
+                <input type="hidden" name="_method" value="put">
+                <a class="btn waves-effect waves-light red">
+                    <i class="mdi-navigation-close"></i>
+                </a>
+            </form>
+        </div>
+        @endif
+    </div>
 @endsection
