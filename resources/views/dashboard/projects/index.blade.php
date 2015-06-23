@@ -13,18 +13,7 @@
             </a>
         </div>
         @forelse($projects as $project)
-            <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                    <span class="card-title">{{ $project->title }}</span>
-                    <span class="badge teal white-text">{{ ucfirst($project->category) }}</span>
-                    <p>{{ $project->description }}</p>
-                    <p>{{ $project->price_range }} budget</p>
-                </div>
-                <div class="card-action">
-                    <a href="{{ route('dashboard.projects.show', $project) }}">View</a>
-                    <a href="{{ route('dashboard.projects.edit', $project) }}">Edit</a>
-                </div>
-            </div>
+            @include('partials.project', ['project' => $project, 'owns' => true])
         @empty
             <p class="flow-text">Looks like you don't have any projects, why not <a href="{{ route('dashboard.projects.create') }}">create one</a>?</p>
         @endforelse

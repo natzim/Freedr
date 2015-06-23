@@ -10,32 +10,7 @@
         @if (is_null($profile))
             <p class="flow-text">Sorry, there are no more freelancers in the queue. Try again in a bit.</p>
         @else
-            <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                    <span class="card-title">{{ $profile->user->name }} <small>{{ $profile->title }}</small></span>
-                    <p>{{ $profile->description }}</p>
-                    <p>I charge {{ $profile->hourly_rate }} per hour</p>
-                </div>
-                <div class="card-action">
-                    <a target="_blank" href="{{ route('dashboard.profile.portfolio', $profile) }}">Portfolio</a>
-                    <a target="_blank" href="{{ route('dashboard.profile.reviews', $profile) }}">
-                        Reviews
-                        @if($profile->reviews()->count() > 0)
-                            <?php
-                            $averageRating = 0;
-                            foreach($profile->reviews as $review)
-                            {
-                                $averageRating += $review->rating;
-                            }
-                            $averageRating = floor($averageRating / $profile->reviews()->count());
-                            ?>
-                            @for($i = 0; $i < $averageRating; $i++)
-                                <i class="mdi-action-grade"></i>
-                            @endfor
-                        @endif
-                    </a>
-                </div>
-            </div>
+            @include('partials.profile', $profile)
             <div class="center row">
                 <div class="col s6">
                     <form method="post" action="{{ route('dashboard.find.freelancers.accept', $profile) }}">

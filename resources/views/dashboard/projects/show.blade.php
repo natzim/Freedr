@@ -15,13 +15,6 @@
                 <i class="mdi-editor-mode-edit"></i>
             </a>
         </div>
-        <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-                <span class="card-title">{{ $project->title }}</span>
-                <span class="badge teal white-text">{{ ucfirst($project->category) }}</span>
-                <p>{{ $project->description }}</p>
-                <p>{{ $project->price_range }} budget</p>
-            </div>
-        </div>
+        @include('partials.project', $project)
     </div>
 @endsection
