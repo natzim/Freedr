@@ -8,7 +8,7 @@
     </div>
     <div class="container">
         <h4>Your gigs</h4>
-        @if (is_null($freelancerMatches))
+        @if (is_null($freelancerMatches) || $freelancerMatches->isEmpty())
             <p class="flow-text">No new matches!</p>
         @else
             <ul class="collection">
