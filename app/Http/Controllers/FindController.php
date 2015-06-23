@@ -20,24 +20,16 @@ class FindController extends Controller
         foreach($projects as $project)
         {
             if (Decision::where('project_id', $project->id)
-                ->where('freelancer_id', Auth::user()->freelancer->id)
-                ->where('decision', 0)
-                ->exists())
-            {
-                continue;
-            }
-
-            if (Decision::where('project_id', $project->id)
-                ->where('freelancer_id', Auth::user()->freelancer->id)
-                ->where('user_id', Auth::id())
-                ->exists())
-            {
-                continue;
-            }
-
-            if (Match::where('project_id', $project->id)
-                ->where('freelancer_id', Auth::user()->freelancer->id)
-                ->exists())
+                    ->where('freelancer_id', Auth::user()->freelancer->id)
+                    ->where('decision', 0)
+                    ->exists() ||
+                Decision::where('project_id', $project->id)
+                    ->where('freelancer_id', Auth::user()->freelancer->id)
+                    ->where('user_id', Auth::id())
+                    ->exists() ||
+                Match::where('project_id', $project->id)
+                    ->where('freelancer_id', Auth::user()->freelancer->id)
+                    ->exists())
             {
                 continue;
             }
@@ -108,24 +100,16 @@ class FindController extends Controller
         foreach($freelancers as $freelancer)
         {
             if (Decision::where('project_id', Auth::user()->projects()->first()->id)
-                ->where('freelancer_id', $freelancer->id)
-                ->where('decision', 0)
-                ->exists())
-            {
-                continue;
-            }
-
-            if (Decision::where('project_id', Auth::user()->projects()->first()->id)
-                ->where('freelancer_id', $freelancer->id)
-                ->where('user_id', Auth::id())
-                ->exists())
-            {
-                continue;
-            }
-
-            if (Match::where('project_id', Auth::user()->projects()->first()->id)
-                ->where('freelancer_id', $freelancer->id)
-                ->exists())
+                    ->where('freelancer_id', $freelancer->id)
+                    ->where('decision', 0)
+                    ->exists() ||
+                Decision::where('project_id', Auth::user()->projects()->first()->id)
+                    ->where('freelancer_id', $freelancer->id)
+                    ->where('user_id', Auth::id())
+                    ->exists() ||
+                Match::where('project_id', Auth::user()->projects()->first()->id)
+                    ->where('freelancer_id', $freelancer->id)
+                    ->exists())
             {
                 continue;
             }
