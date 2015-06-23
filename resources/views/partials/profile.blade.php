@@ -1,13 +1,13 @@
-<div class="card blue-grey darken-1">
-    <div class="card-content white-text">
-        <span class="card-title">{{ $profile->user->name }} <small>{{ $profile->title }}</small></span>
-        <span class="badge teal white-text">{{ ucfirst($profile->category) }}</span>
+<div class="card grey lighten-4">
+    <div class="card-content">
+        <span class="card-title black-text">{{ $profile->user->name }} <small>{{ $profile->title }}</small></span>
+        <span class="badge red white-text z-depth-1">{{ ucfirst($profile->category) }}</span>
         <p>{{ $profile->description }}</p>
         <p>I charge {{ $profile->hourly_rate }} per hour</p>
     </div>
     <div class="card-action">
-        <a href="{{ route('dashboard.profile.portfolio', $profile) }}">Portfolio</a>
-        <a href="{{ route('dashboard.profile.reviews', $profile) }}">
+        <a class="btn waves-effect waves-light red white-text" href="{{ route('dashboard.profile.portfolio', $profile) }}">Portfolio</a>
+        <a class="btn waves-effect waves-light red white-text" href="{{ route('dashboard.profile.reviews', $profile) }}">
             Reviews
             @if($profile->reviews()->count() > 0)
                 <?php
