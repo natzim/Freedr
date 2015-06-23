@@ -27,7 +27,7 @@
                 </div>
             </div>
         @empty
-            <p>This freelancer has no reviews!</p>
+            <p class="flow-text">This freelancer has no reviews!</p>
         @endforelse
     </div>
 @endsection

@@ -8,7 +8,7 @@
     </div>
     <div class="container">
         @if (is_null($project))
-            <p>Sorry, there are no more projects for you to view. Try again in a bit.</p>
+            <p class="flow-text">Sorry, there are no more projects for you to view. Try again in a bit.</p>
         @else
         <div class="card blue-grey darken-1">
             <div class="card-content white-text">

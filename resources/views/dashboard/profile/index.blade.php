@@ -42,7 +42,7 @@
                     </a>
                 </div>
             </div>
-            <p>This is how your profile will appear to other people.</p>
+            <p class="flow-text">This is how your profile will appear to other people.</p>
         @endif
     </div>
 @endsection

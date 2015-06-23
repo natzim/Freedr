@@ -36,7 +36,7 @@
                 </div>
             </div>
         @empty
-            <p>This freelancer has no work in their portfolio!</p>
+            <p class="flow-text">This freelancer has no work in their portfolio!</p>
         @endforelse
     </div>
 @endsection
